@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Mulish");
+@import url("https://fonts.googleapis.com/css?family=Urbanist");
+
+body {
+  height: 100vh;
+  font-family: Mulish;
+  margin: 0;
+}
+
+#root {
+  margin: 0 auto;
+  height: inherit;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hide-cell-desktop {
+  display: none !important;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px !important;
+  margin-top: 20px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-cell-mobile {
+    display: none !important;
+  }
+
+  .hide-cell-desktop {
+    display: flex !important;
+  }
+}

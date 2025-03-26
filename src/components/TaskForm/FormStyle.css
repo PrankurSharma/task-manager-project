@@ -1,0 +1,225 @@
+/* Basic editor styles */
+.tiptap {
+    height: 83px;
+    box-sizing: border-box;
+    padding: 10px 12px 5px;
+    outline: 0;
+    overflow-y: auto;
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    /* List styles */
+    ul,
+    ol {
+        padding: 0 1rem;
+        margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+        li p {
+            margin-top: 0.25em;
+            margin-bottom: 0.25em;
+        }
+    }
+
+    /* Heading styles */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1.1;
+        margin-top: 2.5rem;
+        text-wrap: pretty;
+    }
+
+    h1,
+    h2 {
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1rem;
+    }
+
+    /* Code and preformatted text styles */
+    code {
+        background-color: var(--purple-light);
+        border-radius: 0.4rem;
+        color: var(--black);
+        font-size: 0.85rem;
+        padding: 0.25em 0.3em;
+    }
+
+    pre {
+        background: var(--black);
+        border-radius: 0.5rem;
+        color: var(--white);
+        font-family: 'JetBrainsMono', monospace;
+        margin: 1.5rem 0;
+        padding: 0.75rem 1rem;
+
+        code {
+            background: none;
+            color: inherit;
+            font-size: 0.8rem;
+            padding: 0;
+        }
+    }
+
+    blockquote {
+        border-left: 3px solid var(--gray-3);
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--gray-2);
+        margin: 2rem 0;
+    }
+}
+
+.separator {
+    width: 1px;
+    height: 17.5px;
+    flex-grow: 0;
+    opacity: 0.2;
+    background-color: #000;
+}
+
+.editor-container {
+    height: 123px;
+    flex-grow: 0;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.13);
+    background-color: rgba(241, 241, 241, 0.36);
+}
+
+.form-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px !important;
+}
+
+.outer-form-field {
+    width: 100%;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.13);
+    background-color: rgba(241, 241, 241, 0.36);
+    height: 38px;
+
+    div {
+        height: 38px;
+    }
+}
+
+.form-labels {
+    margin-bottom: 8px !important;
+}
+
+.form-field {
+    width: 100%;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.13);
+    background-color: rgba(241, 241, 241, 0.36);
+    height: 32px;
+
+    div {
+        height: 32px;
+    }
+}
+
+.card-actions {
+    justify-content: end;
+    /* margin: 182px 0 0; */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.13);
+    background-color: #f1f1f1;
+}
+
+.cancel-btn {
+    width: 105px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 8px 0 0;
+    padding: 10px 24px;
+    border-radius: 41px;
+    border: solid 1px rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    width: 102px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px 0 8px;
+    padding: 10px 24px;
+    border-radius: 41px;
+    background-color: #7b1984;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .form-card {
+        position: static;
+        bottom: 0;
+        transform: none;
+        width: inherit;
+    }
+
+    .tab-style,
+    .tab-style-selected {
+        font-size: 12px;
+        width: 50%;
+        margin-right: 20px;
+        color: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .tab-style-selected {
+        background-color: #271E1E;
+        color: #ffffff;
+        font-weight: bolder;
+    }
+
+    .card-actions {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}

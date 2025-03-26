@@ -1,0 +1,85 @@
+.search-input {
+    height: 36px;
+    border: none !important;
+    margin-right: 20px !important;
+    margin-left: auto !important;
+
+    .MuiInputBase-root {
+        border: solid 1px rgba(0, 0, 0, 0.42);
+        padding: 6px 7px;
+        border-radius: 60px;
+        height: 36px;
+    }
+}
+
+.chips-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-task {
+    height: 48px;
+    color: white;
+    background-color: #7B1984;
+    padding: 14px 40px;
+    border-radius: 41px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.toolbar-left {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.filter-head {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    margin-right: 10px !important;
+    font-size: 12px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .filter-toolbar {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: flex-start !important;
+    }
+
+    .toolbar-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .add-task {
+        padding: 0 10px;
+        width: 86px;
+        height: 32px;
+        font-size: 10px;
+        font-weight: bold;
+        align-self: flex-end;
+    }
+
+    .filter-head {
+        color: rgba(0, 0, 0, 0.6) !important;
+        line-height: 1.4 !important;
+        font-weight: 600 !important;
+        margin-right: 10px !important;
+        font-size: 12px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .chips-div {
+        margin-bottom: 17px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
