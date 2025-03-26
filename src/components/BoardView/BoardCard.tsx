@@ -59,7 +59,7 @@ export default function BoardCard({ task }: CardProps) {
     }
     
     return (
-        <Card ref={setNodeRef} {...attributes} {...listeners} sx={{ ...style, minWidth: "336px", marginBottom: "8px", /*visibility: isDragging ? "hidden" : "visible"*/ }}>
+        <Card ref={setNodeRef} {...attributes} {...listeners} sx={{ ...style, maxWidth: "336px", marginBottom: "8px", /*visibility: isDragging ? "hidden" : "visible"*/ }}>
             <CardActionArea onClick={() => {
                 setOpenModal({
                     open: true,

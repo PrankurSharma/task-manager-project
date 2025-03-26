@@ -4,36 +4,42 @@ import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 import { CSSProperties } from "react";
 import googleIcon from "../assets/Group 1171276158.svg";
 import loginDesktop from "../assets/loginDesktop.svg";
+import loginMobile from "../assets/loginMobile.svg";
+
 
 const cardStyle: CSSProperties = {
     border: "none",
     boxShadow: "none",
-    marginLeft: "80.75px",
+    // marginLeft: "80.75px",
     maxWidth: "fit-content",
     fontFamily: "Urbanist",
-    background: "#fff9f9"
+    minWidth: "294.61px"
 };
 
 const contentStyle: CSSProperties = {
     fontSize: "11.6px",
     textAlign: 'left',
     color: "black",
-    width: "294.61px",
+    maxWidth: "294.61px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center", 
     fontFamily: "Urbanist"
 };
 
 const btnStyle: CSSProperties = {
-    width: "363.7px",
+    minWidth: "259px",
+    maxWidth: "363.7px",
     height: "59.7px",
     flexGrow: "0",
     margin: "31.3px 0px 0px 2.2px",
-    padding: "14.5px 59.8px 14.1px 58.9px",
+    display: "flex",
     borderRadius: "18.9px",
     backgroundColor: "#292929",
     cursor: "pointer",
     color: "white",
     fontWeight: "bold",
-    fontFamily: "Urbanist"
+    fontFamily: "Urbanist",
 }
 
 export default function Signin() {

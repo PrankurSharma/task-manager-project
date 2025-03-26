@@ -29,7 +29,7 @@ export default function Board(props: BoardProps) {
     };
 
     return (
-        <Paper ref={setNodeRef} style={{ padding: "12px", minWidth: "355px", background: "rgba(88, 87, 81, 0.07)", marginRight: "24px", height: "100%", display: "flex", flexDirection: "column" }}>
+        <Paper ref={setNodeRef} style={{ padding: "12px", width: "25%", maxWidth: "355px", background: "rgba(88, 87, 81, 0.07)", marginRight: "24px", height: "100%", display: "flex", flexDirection: "column" }}>
             <Typography style={statusStyle}>{statusText[status]}</Typography>
             <div style={{overflowY: "auto", flex: "1", minHeight: "0"}}>
             {tasks.length === 0 ? <Typography>No tasks in {statusText[status]}</Typography> : null}
