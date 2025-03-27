@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, Container, Typography } from "@mui/material";
+import { Button, Card, CardContent, CardHeader, Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useAuth } from "../hooks/useAuth";
 import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 import { CSSProperties } from "react";
@@ -45,6 +45,8 @@ const btnStyle: CSSProperties = {
 export default function Signin() {
     const { loginMutation } = useAuth();
     const { mutate: login } = loginMutation;
+    const theme = useTheme();
+        const isMobile = useMediaQuery(theme.breakpoints.down(768));
     return (
         <Container style={{ 
             height: "100%", 
@@ -53,7 +55,8 @@ export default function Signin() {
             backgroundImage: `url(${loginDesktop})`, 
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            minWidth: "100%" 
+            minWidth: "100%",
+            justifyContent: isMobile ? "center" : "flex-start",
             }}>
             <Card style={cardStyle}>
                 <CardHeader

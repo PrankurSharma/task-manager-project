@@ -1,7 +1,8 @@
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import Signin from "../Authentication/Signin";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "../components/Dashboard";
+import { auth } from "../api/firebase";
 
 export default function Routes() {
     console.log("Accessing routes...",);
@@ -9,7 +10,7 @@ export default function Routes() {
         {
             path: "/signin",
             exact: true,
-            element: <Signin />
+            element: auth.currentUser ? <Navigate to="/"/> : <Signin />
         },
         {
             path: "/",
