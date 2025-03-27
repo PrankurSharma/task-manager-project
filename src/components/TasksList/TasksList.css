@@ -45,7 +45,7 @@
     }
     .logout-btn {
         right: 100px;
-        top: -1px;
+        top: 10px;
         height: 35px;
         z-index: 200;
     }

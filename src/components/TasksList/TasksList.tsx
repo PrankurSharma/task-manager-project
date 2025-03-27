@@ -28,7 +28,7 @@ interface filter {
 
 
 const TasksList = () => {
-    const { myTasks, setMyTasks, selectedRows } = useContext(AppContext);
+    const { myTasks, setMyTasks, selectedRows, setSelectedRows } = useContext(AppContext);
     const { todo, inProgress, completed } = segregateTasks(myTasks || []);
     const [tabSelected, setTabSelected] = useState(1);
     const [filters, setFilters] = useState<filter>({
@@ -123,12 +123,16 @@ const TasksList = () => {
             flexDirection: "column",
             overflow: tabSelected === 2 ? "hidden" : "auto",
             background: "white",
+            zIndex: "500"
         }}>
             <div style={{ position: "sticky", top: "0", background: "white", zIndex: "2" }}>
                 <Tabs
                     value={tabSelected}
                     className="task-tabs hide-cell-mobile"
-                    onChange={(_, newVal) => setTabSelected(newVal)}
+                    onChange={(_, newVal) => {
+                        setTabSelected(newVal);
+                        setSelectedRows([]);
+                    }}
                 >
                     <Tab label="List" value={1} icon={<ViewListRoundedIcon />} iconPosition="start" />
                     <Tab label="Board" value={2} icon={<AssignmentOutlinedIcon />} iconPosition="start" />
@@ -138,7 +142,7 @@ const TasksList = () => {
                 <Filters filters={filters} setFilters={setFilters}/>
             </div>
             
-            {myTasks.length > 0 && <DndContext collisionDetection={closestCorners} onDragOver={handleDragTask} onDragEnd={onDragEnd} sensors={sensors}>
+            {(myTasks.length > 0 || (myTasks.length === 0 && !filters.category && !filters.dueOn && !filters.search)) && <DndContext collisionDetection={closestCorners} onDragOver={handleDragTask} onDragEnd={onDragEnd} sensors={sensors}>
                 <SortableContext items={myTasks}>
                     {tabSelected === 1 && <Table>
                         <TableHead>

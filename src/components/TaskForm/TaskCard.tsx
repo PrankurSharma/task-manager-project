@@ -36,7 +36,7 @@ export default function TaskCard({ update, updateData }: TaskCadProps) {
     const [tabSelected, setTabSelected] = useState("");
 
     const addNewTask = (lastPos: number) => {
-        addTask({ ...data, position: lastPos + 1 } as Task);
+        addTask({ ...data, position: lastPos > 0 ? lastPos + 1 : 0 } as Task);
         closeModal();
     }
 

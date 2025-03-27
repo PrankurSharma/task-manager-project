@@ -27,6 +27,7 @@ export default function ActionBar() {
         selectedRows.forEach((row) => {
             tasks = tasks.filter(task => task.id !== row.id);
         });
+        console.log("Updated tasks: ", tasks);
         tasks = tasks.map((task, idx) => task.position !== idx ? { ...task, position: idx } : task);
         setMyTasks(tasks);
         deleteTasks(selectedRows.map((row) => row.id));
@@ -50,7 +51,7 @@ export default function ActionBar() {
         selectedRows.forEach((row) => {
             console.log("Row select: ", row, tasks);
             tasks[row.position].status = status as statusType;
-            tasks[row.position].status = status as statusType;
+            tasks[row.position].draggableId = status as statusType;
         });
         setMyTasks(tasks);
         updateTaskStatus({ taskIds: selectedRows.map(row => row.id), status: status as statusType });

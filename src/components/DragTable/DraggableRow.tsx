@@ -112,6 +112,7 @@ export const DraggableRow: React.FC<DraggableRowProps> = ({ task }) => {
                 <IconButton onClick={(e) => {
                     e.stopPropagation();
                     handleToggle(e);
+                    setSelectedRows([]);
                 }}>
                     <MoreHorizIcon />
                 </IconButton>
