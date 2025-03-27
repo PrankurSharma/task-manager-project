@@ -41,6 +41,7 @@ export default function TaskMenu({ anchorEl, open, handleClose, handleToggleTask
                 else if (customFunc) {
                     customFunc(item.value);
                 }
+                handleClose();
             }}>{item.label}</MenuItem>)}
         </Menu>
     );

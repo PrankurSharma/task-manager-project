@@ -68,6 +68,7 @@ export const DraggableRow: React.FC<DraggableRowProps> = ({ task }) => {
         if (operation === "Edit") {
             setOpenModal(openModal => ({
                 ...openModal,
+                open: true,
                 modalProps: {
                     update: true,
                     updateData: task
@@ -84,13 +85,8 @@ export const DraggableRow: React.FC<DraggableRowProps> = ({ task }) => {
 
     return (
         <TableRow selected={isItemSelected} ref={setNodeRef} style={{ ...style/*, visibility: isDragging ? "hidden" : "visible"*/, cursor: "pointer" }} onClick={(e) => {
-            setOpenModal({
-                open: true,
-                modalProps: {
-                    update: true,
-                    updateData: task,
-                }
-            });
+            dropdownFunc("Edit");
+            setSelectedRows([]);
         }}>
             <TableCell width={"37%"}>
                 <div style={{ display: "flex", alignItems: "center" }}>
