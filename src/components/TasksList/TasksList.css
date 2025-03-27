@@ -36,6 +36,7 @@
     position: absolute;
     right: 0;
     top: 5px;
+    z-index: 200;
 }
 
 @media screen and (max-width: 768px) {
@@ -46,5 +47,6 @@
         right: 100px;
         top: -1px;
         height: 35px;
+        z-index: 200;
     }
 }
