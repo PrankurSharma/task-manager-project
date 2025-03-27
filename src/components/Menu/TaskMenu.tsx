@@ -22,6 +22,7 @@ export default function TaskMenu({ anchorEl, open, handleClose, handleToggleTask
         <Menu
             id="basic-menu"
             anchorEl={anchorEl}
+            onClick={(e) => e.stopPropagation()}
             open={open}
             onClose={handleClose}
             anchorOrigin={{
